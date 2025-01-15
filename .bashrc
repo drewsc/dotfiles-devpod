@@ -21,7 +21,7 @@ export BROWSER="firefox"
 
 # directories
 export REPOS="$HOME/Repos"
-export GITUSER="mischavandenburg"
+export GITUSER="drewsc"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
 export LAB="$GHREPOS/lab"
@@ -82,12 +82,12 @@ clone() {
 # ~~~~~~~~~~~~~~~ SSH ~~~~~~~~~~~~~~~~~~~~~~~~
 # SSH Script from arch wiki
 
-if ! pgrep -u "$USER" ssh-agent >/dev/null; then
-	ssh-agent >"$XDG_RUNTIME_DIR/ssh-agent.env"
-fi
-if [[ ! "$SSH_AUTH_SOCK" ]]; then
-	source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-fi
+#if ! pgrep -u "$USER" ssh-agent >/dev/null; then
+#	ssh-agent >"$XDG_RUNTIME_DIR/ssh-agent.env"
+#fi
+#if [[ ! "$SSH_AUTH_SOCK" ]]; then
+#	source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+#fi
 
 # Only run on Ubuntu
 
@@ -100,9 +100,9 @@ fi
 # ssh-add -q ~/.ssh/mischa
 # ssh-add -q ~/.ssh/mburg
 #{
-ssh-add -q ~/.ssh/id_ed25519
-ssh-add -q ~/.ssh/vanoord
-ssh-add -q ~/.ssh/delegate
+#ssh-add -q ~/.ssh/id_ed25519
+#ssh-add -q ~/.ssh/vanoord
+#ssh-add -q ~/.ssh/delegate
 #} &>/dev/null
 
 # ~~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -229,9 +229,9 @@ source <(flux completion bash)
 alias fgk='flux get kustomizations'
 
 # completions
-source <(talosctl completion bash)
-source <(kubectl-cnp completion bash)
-source <(cilium completion bash)
+#source <(talosctl completion bash)
+#source <(kubectl-cnp completion bash)
+#source <(cilium completion bash)
 source <(devpod completion bash)
 
 # fzf aliases
@@ -263,3 +263,4 @@ export PATH="/Users/mischa/.rd/bin:$PATH"
 #export NVM_DIR="$HOME/.config/nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+eval "$(starship init bash)"
