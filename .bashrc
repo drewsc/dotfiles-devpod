@@ -232,7 +232,7 @@ alias fgk='flux get kustomizations'
 #source <(talosctl completion bash)
 #source <(kubectl-cnp completion bash)
 #source <(cilium completion bash)
-source <(devpod completion bash)
+#source <(devpod completion bash)
 
 # fzf aliases
 # use fp to do a fzf search and preview the files
