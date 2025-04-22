@@ -32,6 +32,7 @@ packages=(
   kubectx
   direnv
   starship
+  lsd
 )
 
 # Iterate over the array and install each package
